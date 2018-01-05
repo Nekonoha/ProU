@@ -2,7 +2,7 @@ import requests
 import time
 from requests import *
 import json
-from rasp import gps
+# from rasp import gps
 
 url = "http://localhost:8000/gps"
 
@@ -18,14 +18,14 @@ header = {
 
 while True:
     try:
-        gps_lat = str(gps.get_gps_lat())
-        gps_long = str(gps.get_gps_long())
-        gps = {
-            "Latitude": gps_lat,
-            "Longitude": gps_long
-        }
         # test のとこをgpsにする
         # urlを本番のurlにする
+        # gps_lat = str(gps.get_gps_lat())
+        # gps_long = str(gps.get_gps_long())
+        # gps = {
+        #     "Latitude": gps_lat,
+        #     "Longitude": gps_long
+        # }
         requests.get(url, timeout=5)
         requests.post(url, data=json.dumps(test), headers=header)
         print("connected")
