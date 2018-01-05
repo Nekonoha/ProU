@@ -12,25 +12,36 @@
 </body>
 </html>
 
-<script>
-    function initMap() {
-        // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: (35.6263035+35.6556156)/2, lng: (139.3371608+139.3366535)/2},
-            zoom: 15,
-        });
-        new google.maps.Marker({
-            position: {lat: 35.6556156, lng: 139.3366535},
-            map: map,
-            name: "八王子駅南口"
-        });
-        new google.maps.Marker({
-            position: {lat: 35.6263035, lng: 139.3371608},
-            map: map,
-            name: "東京工科大学八王子キャンパス"
-        });
-    }
-
+  <script>
+function initMap() {
+  // Create a map object and specify the DOM element for display.
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: (35.6263035+35.6556156)/2, lng: (139.3371608+139.3366535)/2},
+    zoom: 15,
+  });
+  new google.maps.Marker({
+    position: {lat: 35.6556156, lng: 139.3366535},
+    map: map,
+    name: "八王子駅南口",
+  });
+  new google.maps.Marker({
+    position: {lat: 35.6263035, lng: 139.3371608},
+    map: map,
+    name: "東京工科大学八王子キャンパス",
+  });
+  new google.maps.Marker({
+    name: "バス",
+    position: {lat: {{latitude}}, lng: {{longitude}}},
+    map: map,
+    icon: {
+      path: google.maps.SymbolPath.CIRCLE,
+      fillColor: 'red',
+      fillOpacity: .2,
+      scale: 20,
+      strokeColor: 'white',
+      strokeWeight: .5
+    },
+  });
+}
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFrZlttO5TOJhun9gvIvILXsr91xjPzUE&callback=initMap" async
-        defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFrZlttO5TOJhun9gvIvILXsr91xjPzUE&callback=initMap" async defer></script>

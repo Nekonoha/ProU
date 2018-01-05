@@ -7,8 +7,8 @@ import json
 url = "http://localhost:8000/gps"
 
 test = {
-    "Latitude":"35.627599 N",
-    "Longitude": "139.339755 E"
+    "Latitude": 35.627599,
+    "Longitude": 139.339755,
 }
 
 header = {
